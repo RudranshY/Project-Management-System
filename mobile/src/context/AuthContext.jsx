@@ -6,6 +6,7 @@ import {
 } from "react";
 
 import { DeviceEventEmitter } from "react-native";
+import { router } from "expo-router";
 import * as SecureStore from "expo-secure-store";
 
 import api from "../services/api";
@@ -28,6 +29,7 @@ function AuthProvider({ children }) {
           message ||
             "Your session has expired. Please log in again."
         );
+        router.replace("/login");
       }
     );
 

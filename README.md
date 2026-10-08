@@ -28,18 +28,8 @@ A full-stack project management system with a React web application and React Na
 
 ## Architecture
 
-```text
-React Web ───────┐
-                 │
-                 ▼
-          Express REST API
-                 │
-                 ▼
-          PostgreSQL Database
-                 ▲
-                 │
-React Native ────┘
-```
+![Project Management System Architecture](docs/images/architecture.png)
+
 
 Both web and Android use the same backend API and production PostgreSQL database.
 

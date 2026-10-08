@@ -8,6 +8,44 @@ The Project Management System uses PostgreSQL with three main tables:
 - `projects`
 - `tasks`
 
+## Visual ER Diagram
+
+```mermaid
+erDiagram
+    USERS ||--o{ PROJECTS : owns
+    PROJECTS ||--o{ TASKS : contains
+
+    USERS {
+        INTEGER id PK
+        VARCHAR full_name
+        VARCHAR email UK
+        VARCHAR password_hash
+        TIMESTAMP created_at
+    }
+
+    PROJECTS {
+        INTEGER id PK
+        INTEGER user_id FK
+        VARCHAR name
+        TEXT description
+        VARCHAR status
+        DATE start_date
+        DATE end_date
+        TIMESTAMP created_at
+    }
+
+    TASKS {
+        INTEGER id PK
+        INTEGER project_id FK
+        VARCHAR name
+        TEXT description
+        VARCHAR priority
+        VARCHAR status
+        DATE due_date
+        TIMESTAMP created_at
+    }
+```
+
 ## Relationships
 
 ```text

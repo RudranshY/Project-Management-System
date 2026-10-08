@@ -78,6 +78,7 @@ export default function TaskForm({
       <TextInput
         style={styles.input}
         placeholder="Task name"
+        placeholderTextColor="#6b7280"
         value={formData.name}
         onChangeText={(value) =>
           updateField("name", value)
@@ -90,6 +91,7 @@ export default function TaskForm({
           styles.textarea,
         ]}
         placeholder="Description"
+        placeholderTextColor="#6b7280"
         multiline
         value={formData.description}
         onChangeText={(value) =>
@@ -144,6 +146,7 @@ export default function TaskForm({
       <TextInput
         style={styles.input}
         placeholder="Due date (YYYY-MM-DD)"
+        placeholderTextColor="#6b7280"
         value={formData.due_date}
         onChangeText={(value) =>
           updateField("due_date", value)
@@ -201,6 +204,7 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     marginBottom: 12,
     backgroundColor: "#fff",
+    color: "#111827",
   },
 
   textarea: {
