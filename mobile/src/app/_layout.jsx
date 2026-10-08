@@ -26,8 +26,6 @@ export default function RootLayout() {
             title: "Register",
           }}
         />
-        
-
         <Stack.Screen
           name="dashboard"
           options={{
