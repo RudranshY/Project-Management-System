@@ -188,10 +188,11 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 24,
     fontWeight: "700",
+    color: "#111827",
   },
 
   email: {
-    color: "#666",
+    color: "#64748b",
     marginTop: 4,
     marginBottom: 24,
   },

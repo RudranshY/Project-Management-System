@@ -33,7 +33,9 @@ export default function TaskForm({
         description: task.description || "",
         priority: task.priority || "Medium",
         status: task.status || "Pending",
-        due_date: task.due_date || "",
+        due_date: task.due_date
+  ? task.due_date.slice(0, 10)
+  : "",
       });
     } else {
       setFormData(initialForm);

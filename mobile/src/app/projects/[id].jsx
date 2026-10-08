@@ -95,11 +95,19 @@ export default function ProjectDetailsScreen() {
 
       <View style={styles.infoBox}>
         <Text>
-          Start: {project.start_date || "Not set"}
+          Start: {project.start_date ? new Date(project.start_date).toLocaleDateString("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+}) : "Not set"}
         </Text>
 
         <Text>
-          End: {project.end_date || "Not set"}
+          End: {project.end_date ? new Date(project.end_date).toLocaleDateString("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+}) : "Not set"}
         </Text>
       </View>
 

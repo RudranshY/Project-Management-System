@@ -28,7 +28,13 @@ export default function TaskCard({
       </Text>
 
       <Text style={styles.meta}>
-        Due: {task.due_date || "Not set"}
+        Due: {task.due_date
+  ? new Date(task.due_date).toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    })
+  : "Not set"}
       </Text>
 
       <View style={styles.actions}>

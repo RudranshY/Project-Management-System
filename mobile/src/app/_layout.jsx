@@ -16,39 +16,39 @@ export default function RootLayout() {
         <Stack.Screen
           name="login"
           options={{
-            title: "Login",
+          headerShown: false,
           }}
         />
 
         <Stack.Screen
           name="register"
           options={{
-            title: "Register",
+            headerShown: false,
           }}
         />
         <Stack.Screen
           name="dashboard"
           options={{
-            title: "Dashboard",
+            headerShown: false,
           }}
         />
         <Stack.Screen
   name="projects"
   options={{
-    title: "Projects",
+     headerShown: false,
   }}
 />
 <Stack.Screen
   name="projects/[id]"
   options={{
-    title: "Project",
+    headerShown: false,
   }}
 />
 
 <Stack.Screen
   name="projects/[id]/tasks"
   options={{
-    title: "Tasks",
+    headerShown: false,
   }}
 />
       </Stack>

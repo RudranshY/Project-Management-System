@@ -129,7 +129,11 @@ export default function ProjectsScreen() {
             </Text>
 
             <Text style={styles.date}>
-              End: {item.end_date || "Not set"}
+              End: {item.end_date ? new Date(item.end_date).toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+              }) : "Not set"}
             </Text>
           </Pressable>
         )}
