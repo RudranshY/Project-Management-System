@@ -4,7 +4,8 @@ import axios from "axios";
 import TaskCard from "../components/TaskCard";
 import TaskForm from "../components/TaskForm";
 
-const API_URL = "http://127.0.0.1:5000/api";
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:5000/api";
 
 function Tasks() {
   const [tasks, setTasks] = useState([]);
