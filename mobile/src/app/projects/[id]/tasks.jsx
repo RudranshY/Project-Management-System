@@ -119,12 +119,15 @@ export default function TasksScreen() {
       setSaving(true);
       setError("");
 
-      if (editingTask) {
-        await api.put(
-          `/tasks/${editingTask.id}`,
-          formData
-        );
-      } else {
+   if (editingTask) {
+  await api.put(`/tasks/${editingTask.id}`, {
+    ...formData,
+    project_id: Number(id),
+    due_date: formData.due_date
+      ? formData.due_date.slice(0, 10)
+      : "",
+  });
+}else {
         await api.post("/tasks", {
           project_id: Number(id),
           ...formData,
@@ -155,13 +158,16 @@ export default function TasksScreen() {
     try {
       setError("");
 
-      await api.put(`/tasks/${task.id}`, {
-        name: task.name,
-        description: task.description || "",
-        priority: task.priority,
-        status: "Completed",
-        due_date: task.due_date || "",
-      });
+    await api.put(`/tasks/${task.id}`, {
+  project_id: Number(id),
+  name: task.name,
+  description: task.description || "",
+  priority: task.priority,
+  status: "Completed",
+  due_date: task.due_date
+    ? String(task.due_date).slice(0, 10)
+    : "",
+});
 
       await fetchTasks();
     } catch (error) {
